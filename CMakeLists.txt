@@ -17,9 +17,9 @@ else()
     message(FATAL_ERROR "CPM requires Git.")
   endif()
   if (NOT EXISTS ${CPM_DIR}/CPM.cmake)
-    message(STATUS "Cloning repo (https://github.com/iauns/cpm)")
+    message(STATUS "Cloning repo (https://github.com/CIBC-Internal/cpm)")
     execute_process(
-      COMMAND "${GIT_EXECUTABLE}" clone https://github.com/iauns/cpm ${CPM_DIR}
+      COMMAND "${GIT_EXECUTABLE}" clone https://github.com/CIBC-Internal/cpm ${CPM_DIR}
       RESULT_VARIABLE error_code
       OUTPUT_QUIET ERROR_QUIET)
     if(error_code)
@@ -35,14 +35,14 @@ endif()
 
 # ++ MODULE: Cereal
 CPM_AddModule("es_cereal"
-  GIT_REPOSITORY "https://github.com/iauns/cpm-es-cereal"
+  GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-es-cereal"
   GIT_TAG "origin/master"
   EXPORT_MODULE TRUE)
 
 # ++ MODULE: GLM
 CPM_AddModule("glm"
-  GIT_REPOSITORY "https://github.com/iauns/cpm-glm"
-  GIT_TAG "1.0.2"
+  GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-glm"
+  GIT_TAG "origin/master"
   USE_EXISTING_VER TRUE)
 
 # This call will ensure all include directories and definitions are present
